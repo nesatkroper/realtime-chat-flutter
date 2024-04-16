@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:realtime_chat/screen/home_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+// import 'package:realtime_chat/screen/home_page.dart';
+import 'package:realtime_chat/screen/login_page.dart';
+import 'package:realtime_chat/utils.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  await setup();
+  runApp(const MyApp());
+}
+
+Future<void> setup() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await setupFirebase();
 }
 
 class MyApp extends StatelessWidget {
@@ -15,11 +24,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepOrange,
+          seedColor: Colors.blue,
         ),
         useMaterial3: true,
+        textTheme: GoogleFonts.kodeMonoTextTheme(),
       ),
-      home: HomePage(),
+      home: const LoginPage(),
     );
   }
 }
