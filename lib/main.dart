@@ -6,7 +6,7 @@ import 'package:realtime_chat/utils.dart';
 
 void main() async {
   await setup();
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 Future<void> setup() async {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.kodeMonoTextTheme(),
       ),
-      home: const LoginPage(),
+      home: LoginPage(),
     );
   }
 }
